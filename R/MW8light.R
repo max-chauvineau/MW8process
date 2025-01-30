@@ -30,7 +30,7 @@ extract_light <- function(file) {
     )
     light <- as.numeric(unlist(strsplit(light_text, ",")))
   }, error = function(e) {
-    message("Could not find light measurement")
+    message("Could not find light measurement.")
   })
   return(light)
 }

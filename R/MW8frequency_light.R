@@ -31,7 +31,7 @@ extract_frequency_light <- function(file) {
       )
     )
   }, error = function(e) {
-    message("Could not find light frequency")
+    message("Could not find light frequency.")
   })
   return(freq)
 }
