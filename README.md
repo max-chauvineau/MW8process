@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-MW8process: Open-source R package to capture data from MotionWare and MotionWatch 8.
+MW8process: Open-source R package to capture and process actigraphy data from MotionWatch8 device and MotionWare software.
 
 ## Installation
 
