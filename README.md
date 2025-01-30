@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of MW8process is to ...
+MW8process: Open-source R package to capture data from MotionWare and MotionWatch 8.
 
 ## Installation
 
@@ -12,7 +12,7 @@ You can install the development version of MW8process from [GitHub](https://gith
 
 ``` r
 # install.packages("pak")
-pak::pak("max-chauvineau/MW8process")
+remotes::install_github("max-chauvineau/MW8process")
 ```
 
 ## Usage
