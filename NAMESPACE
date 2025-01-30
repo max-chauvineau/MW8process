@@ -1,0 +1,18 @@
+exportPattern("^[[:alpha:]]+")
+
+export(extract_axial_mode)
+export(extract_device_SN)
+export(extract_device_version)
+export(extract_epoch)
+export(extract_frequency_light)
+export(extract_light)
+export(extract_motion)
+export(extract_npcra)
+export(extract_position)
+export(extract_sex)
+export(extract_sleep_analysis)
+export(extract_start_recording)
+export(extract_userID)
+
+importFrom(dplyr,"%>%")
+importFrom("stats", "time")

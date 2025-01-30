@@ -1,0 +1,26 @@
+Package: MW8process
+Type: Package
+Title: MotionWatch8 data processing
+Version: 0.1.1
+Authors@R: c(
+    person(
+      "Maxime", "Chauvineau",
+      email = "mchauvineau@europeansleepcenter.fr",
+      role = c("aut", "cre")
+    )
+  )
+Description: Process actigraphy data (MotionWatch8 device) from MotionWare software.
+Imports: 
+    xml2,
+    dplyr,
+    stats,
+    tidyselect
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
