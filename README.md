@@ -11,8 +11,8 @@ MW8process: Open-source R package to capture and process actigraphy data from Mo
 You can install the development version of MW8process from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
-remotes::install_github("max-chauvineau/MW8process")
+# install.packages("devtools")
+devtools::install_github("max-chauvineau/MW8process")
 ```
 
 ## Usage
