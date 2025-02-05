@@ -7,3 +7,5 @@
 .gitignore
 README.Rmd
 .quarto
+/doc/
+/Meta/
