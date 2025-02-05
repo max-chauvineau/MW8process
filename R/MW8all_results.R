@@ -1,5 +1,5 @@
 #' @title
-#' MotionWatch 8 - Extraction de du mode
+#' MotionWatch 8 - Extraction de toutes les données
 #'
 #' @description
 #' Cette fonction fournit une liste des résultats des analyses de la MotionWatch 8.
