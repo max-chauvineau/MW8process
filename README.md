@@ -1,21 +1,17 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
-
 # MW8process
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-MW8process: Open-source R package to capture and process actigraphy data
-from MotionWatch8 device and MotionWare software.
+MW8process: Open-source R package to capture and process actigraphy data from MotionWatch8 device and MotionWare software.
 
 ## Installation
 
-You can install the development version of MW8process from
-[GitHub](https://github.com/) with:
+You can install the development version of MW8process from [GitHub](https://github.com/) with:
 
 ``` r
-# install.packages("pak")
+# install.packages("remotes")
 remotes::install_github("max-chauvineau/MW8process", build_vignettes = TRUE)
 ```
 
@@ -28,7 +24,7 @@ library(MW8process)
 ## Fonctions du package
 
 ``` r
-# extract_all() -> extrait toutes les données
+# extract_all() -> extrait toutes les données et renvoie le résultat sous forme de liste
 
 # extract_sleep_analysis() -> extrait les résultats de l'analyse du sommeil nuit par nuit
 
