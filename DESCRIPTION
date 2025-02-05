@@ -9,7 +9,7 @@ Authors@R: c(
       role = c("aut", "cre")
     )
   )
-Description: Process actigraphy data (MotionWatch8 device) from MotionWare software.
+Description: Process actigraphy data from MotionWatch8 device and MotionWare software.
 Imports: 
     xml2,
     dplyr,
