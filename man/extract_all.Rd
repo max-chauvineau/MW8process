@@ -2,7 +2,7 @@
 % Please edit documentation in R/MW8all_results.R
 \name{extract_all}
 \alias{extract_all}
-\title{MotionWatch 8 - Extraction de du mode}
+\title{MotionWatch 8 - Extraction de toutes les données}
 \usage{
 extract_all(file)
 }
