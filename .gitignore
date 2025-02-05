@@ -5,6 +5,7 @@
 .DS_Store
 .Rbuildignore
 .gitignore
+README.Rmd
 .quarto
 /doc/
 /Meta/
