@@ -29,6 +29,15 @@ extract_light <- function(file) {
       )
     )
     light <- as.numeric(unlist(strsplit(light_text, ",")))
+
+    original_length <- length(light)
+    start_date <- extract_start_recording(file)
+    epoch <- extract_frequency_light(file)
+    motion <- data.frame(
+      time = seq(from = start_date, by = epoch, length.out = length(light)),
+      count = light
+    )
+
   }, error = function(e) {
     message("Could not find light measurement.")
   })
