@@ -33,7 +33,7 @@ extract_light <- function(file) {
   epoch <- extract_frequency_light(file)
   light <- data.frame(
     time = seq(from = start_date, by = epoch, length.out = length(light)),
-    count = light
+    light = light
   )
   return(light)
 }
