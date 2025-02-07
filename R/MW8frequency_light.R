@@ -20,18 +20,13 @@
 #' @export
 
 extract_frequency_light <- function(file) {
-  freq <- NULL
-  tryCatch({
-    freq <- as.numeric(
-      xml2::xml_text(
-        xml2::xml_find_first(
-          xml2::read_xml(file),
-          "//channel[name = 'Light']//following-sibling::epoch"
-        )
+  freq <- as.numeric(
+    xml2::xml_text(
+      xml2::xml_find_first(
+        xml2::read_xml(file),
+        "//channel[name = 'Light']//following-sibling::epoch"
       )
     )
-  }, error = function(e) {
-    message("Could not find light frequency.")
-  })
+  )
   return(freq)
 }
