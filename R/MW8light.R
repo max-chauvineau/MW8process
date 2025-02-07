@@ -20,26 +20,20 @@
 #' @export
 
 extract_light <- function(file) {
-  light <- NULL
-  tryCatch({
-    light_text <- xml2::xml_text(
-      xml2::xml_find_first(
-        xml2::read_xml(file),
-        "//channel[name = 'Light']//following-sibling::data"
-      )
+  light_text <- xml2::xml_text(
+    xml2::xml_find_first(
+      xml2::read_xml(file),
+      "//channel[name = 'Light']//following-sibling::data"
     )
-    light <- as.numeric(unlist(strsplit(light_text, ",")))
+  )
+  light <- as.numeric(unlist(strsplit(light_text, ",")))
 
-    original_length <- length(light)
-    start_date <- extract_start_recording(file)
-    epoch <- extract_frequency_light(file)
-    motion <- data.frame(
-      time = seq(from = start_date, by = epoch, length.out = length(light)),
-      count = light
-    )
-
-  }, error = function(e) {
-    message("Could not find light measurement.")
-  })
+  original_length <- length(light)
+  start_date <- extract_start_recording(file)
+  epoch <- extract_frequency_light(file)
+  light <- data.frame(
+    time = seq(from = start_date, by = epoch, length.out = length(light)),
+    count = light
+  )
   return(light)
 }
