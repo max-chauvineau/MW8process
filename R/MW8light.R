@@ -75,10 +75,7 @@ extract_light <- function(file) {
     light$light[light$light == -1] <- NA
     light <- light %>%
       dplyr::filter(dplyr::row_number() >= min(which(!is.na(light))) & dplyr::row_number() <= max(which(!is.na(light))))
-  } else {
-    light <- tibble()
+
+    return(light)
   }
-
-  return(light)
-
 }
