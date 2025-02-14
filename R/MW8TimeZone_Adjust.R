@@ -19,22 +19,24 @@
 #'
 #' @export
 
-file <- "C:/Users/chauv/Desktop/Daniil Medvedev/Daniil Medvedev_AUSTRALIE.mtn"
-
 extract_TZadj <- function(file) {
 
-  TZadj <- as.numeric(
-    tail(
-      xml2::xml_text(
-        xml2::xml_find_all(
-          xml2::read_xml(file),
-          "//property[name = '=TimeZoneAdjusted']//following-sibling::content"
-        )
-      ), 1
-    )
-  )/60
+  TZadj_nodes <- xml2::xml_find_all(
+    xml2::read_xml(file),
+    "//property[name = '=TimeZoneAdjusted']//following-sibling::content"
+  )
 
-  TZadj <- ifelse(is.na(TZadj), 0, TZadj)
+  if (length(TZadj_nodes) != 0) {
+    TZadj <- as.numeric(
+      tail(
+        xml2::xml_text(
+          TZadj_nodes
+        ), 1
+      )
+    )/60
+
+    TZadj <- ifelse(is.na(TZadj), 0, TZadj)
+  }
 
   return(TZadj)
 }
