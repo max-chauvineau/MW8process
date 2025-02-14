@@ -106,7 +106,22 @@ extract_sleep_analysis <- function(file) {
                                   as.numeric)) %>%
       dplyr::relocate(c("SleepThreshold", "DayNumber"), .after = tidyselect::last_col()) %>%
       stats::na.omit() %>%
-      dplyr::select(-c(id, time))
+      dplyr::select(-c(id, time)) %>%
+      mutate(
+        LightsOut = as.POSIXct(paste(StartDay, LightsOut), format = "%Y-%m-%d %H:%M:%S", tz = "UTC") + lubridate::hours(extract_TZadj(file)),
+        Asleep = as.POSIXct(paste(StartDay, Asleep), format = "%Y-%m-%d %H:%M:%S", tz = "UTC") + lubridate::hours(extract_TZadj(file)),
+        Woke = as.POSIXct(paste(EndDay, Woke), format = "%Y-%m-%d %H:%M:%S", tz = "UTC") + lubridate::hours(extract_TZadj(file)),
+        GotUp = as.POSIXct(paste(EndDay, GotUp), format = "%Y-%m-%d %H:%M:%S", tz = "UTC") + lubridate::hours(extract_TZadj(file)),
+        StartDay = as.Date(LightsOut),
+        EndDay = as.Date(GotUp),
+        StartDayOfWeek = lubridate::wday(LightsOut, label = T, week_start = 1, abbr = FALSE)
+      ) %>%
+      mutate(
+        LightsOut = format(LightsOut, "%H:%M:%S"),
+        Asleep = format(Asleep, "%H:%M:%S"),
+        Woke = format(Woke, "%H:%M:%S"),
+        GotUp = format(GotUp, "%H:%M:%S")
+      )
 
     return(df_sleep_analysis_mtn)
 

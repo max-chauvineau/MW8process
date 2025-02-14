@@ -32,9 +32,13 @@ library(MW8process)
 
 # extract_npcra() -> extrait les résutats du npcra
 
+# extract_nap() -> extrait les données de sieste
+
 # extract_light() -> extrait les données de luminosité
 
 # extract_start_recording() -> extrait la date et l'heure de début de l'enregistrement
+
+# extract_TZadj() -> extrait l'ajustement du fuseau horaire en heure(s) (à modifier dans MotionWare)
 
 # extract_userID() -> extrait l'id
 

@@ -27,5 +27,5 @@ extract_start_recording <- function(file) {
         "//property[name = '=StartTime']//following-sibling::content"
       )
     ),
-    format="%Y-%m-%d %H:%M:%S", tz="UTC")
+    format="%Y-%m-%d %H:%M:%S", tz="UTC") + lubridate::hours(extract_TZadj(file))
 }
