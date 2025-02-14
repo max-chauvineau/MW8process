@@ -27,9 +27,8 @@ extract_light <- function(file) {
     )
   )
   original_light <- as.numeric(unlist(strsplit(light_text, ",")))
-  original_length <- length(original_light)
 
-  if (original_length > 1) {
+  if (length(original_light) > 1) {
     # Créer la série temporelle initiale basée sur les données d'origine
     start_date <- extract_start_recording(file)
     epoch <- extract_frequency_light(file)
@@ -77,10 +76,9 @@ extract_light <- function(file) {
     light <- light %>%
       dplyr::filter(dplyr::row_number() >= min(which(!is.na(light))) & dplyr::row_number() <= max(which(!is.na(light))))
   } else {
-    light <- as.data.frame(list(
-      time = numeric(0),
-      light = numeric(0)
-    ))
+    light <- tibble()
   }
+
   return(light)
+
 }
