@@ -34,8 +34,8 @@ extract_TZadj <- function(file) {
         ), 1
       )
     )/60
-
-    TZadj <- ifelse(is.na(TZadj), 0, TZadj)
+  } else {
+    TZadj <- 0
   }
 
   return(TZadj)
