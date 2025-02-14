@@ -76,8 +76,10 @@ extract_npcra <- function(file) {
       dplyr::mutate(dplyr::across(c(id, Length, L5, M10, RA, IS, IV),
                     as.numeric)) %>%
       dplyr::mutate(dplyr::across(c(L5Hour, M10Hour), ~ as.POSIXct(as.numeric(.) * 3600, origin = "1970-01-01", tz = "UTC"))) %>%
-      dplyr::filter(time == max(time)) %>%
-      dplyr::ungroup() %>%
+      group_by(id) %>%
+      filter(!(any(is.na(StartHour) | is.na(Length) | is.na(L5) | is.na(L5Hour) |
+                     is.na(M10) | is.na(M10Hour) | is.na(RA)))) %>%
+      ungroup() %>%
       stats::na.omit() %>%
       dplyr::select(-c(id, time))
 
