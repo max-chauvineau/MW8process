@@ -13,7 +13,7 @@ extract_TZadj(file)
 Temps en heure(s).
 }
 \description{
-Cette fonction extrait l'ajustement du fuseau horaire en heure(s) (modifié dans MotionWare).
+Cette fonction extrait l'ajustement du fuseau horaire en heure(s) (à modifier dans MotionWare).
 }
 \examples{
 #extract_TZadj()
