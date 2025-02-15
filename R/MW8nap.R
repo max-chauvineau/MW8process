@@ -83,8 +83,9 @@ extract_nap <- function(file) {
       stats::na.omit() %>%
       dplyr::select(-c(id, time)) %>%
       mutate(
-        AnalStart = as.POSIXct(AnalStart, origin = extract_start_recording(file), tz = "UTC") + lubridate::hours(extract_TZadj(file)),
-        AnalEnd = as.POSIXct(AnalEnd, origin = extract_start_recording(file), tz = "UTC") + lubridate::hours(extract_TZadj(file)),
+        AnalStart = as.POSIXct(AnalStart,
+                               origin = MW8process::extract_start_recording(file), tz = "UTC"),
+        AnalEnd = as.POSIXct(AnalEnd, origin =  MW8process::extract_start_recording(file), tz = "UTC"),
         Date = as.Date(AnalStart + lubridate::hours(extract_TZadj(file))),
         NapDuration = as.numeric(difftime(AnalEnd, AnalStart, units = "min"))
       ) %>%
