@@ -19,6 +19,9 @@
 #'
 #' @export
 
+library(dplyr)
+file <- "C:/Users/chauv/Desktop/Daniil Medvedev/Daniil Medvedev_AUSTRALIE.mtn"
+
 extract_nap <- function(file) {
 
   # Extraire tous les nœuds <ann> qui contiennent un ID pour différencier les nuits
@@ -77,7 +80,8 @@ extract_nap <- function(file) {
         dplyr::across(tidyselect::where(~ is.character(.) && any(grepl(",", .))), ~ as.numeric(gsub(",", ".", .)))
         ) %>%
       dplyr::group_by(id) %>%
-      dplyr::filter(time == max(time)) %>%
+      filter(!(any(is.na(AnalStart) | is.na(AnalEnd)))) %>%
+      ungroup() %>%
       dplyr::arrange(AnalStart) %>%
       dplyr::ungroup() %>%
       stats::na.omit() %>%
