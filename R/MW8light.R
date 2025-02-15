@@ -74,8 +74,7 @@ extract_light <- function(file) {
 
     light$light[light$light == -1] <- NA
     light <- light %>%
-      dplyr::filter(dplyr::row_number() >= min(which(!is.na(light))) & dplyr::row_number() <= max(which(!is.na(light)))) %>%
-      mutate(time = time + lubridate::hours(extract_TZadj(file)))
+      dplyr::filter(dplyr::row_number() >= min(which(!is.na(light))) & dplyr::row_number() <= max(which(!is.na(light))))
 
     return(light)
   }

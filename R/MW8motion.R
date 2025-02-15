@@ -77,8 +77,7 @@ extract_motion <- function(file) {
 
   motion$count[motion$count == -1] <- NA
   motion <- motion %>%
-    dplyr::filter(dplyr::row_number() >= min(which(!is.na(count))) & dplyr::row_number() <= max(which(!is.na(count)))) %>%
-    mutate(time = time + lubridate::hours(extract_TZadj(file)))
+    dplyr::filter(dplyr::row_number() >= min(which(!is.na(count))) & dplyr::row_number() <= max(which(!is.na(count))))
 
   return(motion)
 }
