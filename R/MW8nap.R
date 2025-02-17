@@ -19,9 +19,6 @@
 #'
 #' @export
 
-library(dplyr)
-file <- "C:/Users/chauv/Desktop/Daniil Medvedev/Daniil Medvedev_AUSTRALIE.mtn"
-
 extract_nap <- function(file) {
 
   # Extraire tous les nœuds <ann> qui contiennent un ID pour différencier les nuits
@@ -88,9 +85,9 @@ extract_nap <- function(file) {
       dplyr::select(-c(id, time)) %>%
       mutate(
         AnalStart = as.POSIXct(AnalStart,
-                               origin = MW8process::extract_start_recording(file), tz = "UTC"),
-        AnalEnd = as.POSIXct(AnalEnd, origin =  MW8process::extract_start_recording(file), tz = "UTC"),
-        Date = as.Date(AnalStart + lubridate::hours(extract_TZadj(file))),
+                               origin = extract_start_recording(file), tz = "UTC"),
+        AnalEnd = as.POSIXct(AnalEnd, origin =  extract_start_recording(file), tz = "UTC"),
+        Date = as.Date(AnalStart),
         NapDuration = as.numeric(difftime(AnalEnd, AnalStart, units = "min"))
       ) %>%
       select(Date, everything()) %>%
