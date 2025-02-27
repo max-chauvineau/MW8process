@@ -88,7 +88,6 @@ extract_sleep_analysis <- function(file) {
     names(df_nights_mtn) <- gsub(":SpreadSheetFriendlyValue", "", names(df_nights_mtn))
     names(df_nights_mtn) <- gsub("SleepRep:", "", names(df_nights_mtn))
 
-    # Convertir certaines colonnes en numérique
     df_sleep_analysis_mtn <- df_nights_mtn %>%
       dplyr::group_by(id, time) %>%
       dplyr::summarize(dplyr::across(tidyselect::everything(), ~ dplyr::first(stats::na.omit(.)), .names = "{.col}"), .groups = "drop") %>%
