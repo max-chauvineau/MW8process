@@ -96,8 +96,6 @@ extract_sleep_analysis <- function(file) {
       dplyr::mutate(dplyr::across(tidyselect::where(~ is.character(.) && any(grepl(",", .))), ~ as.numeric(gsub(",", ".", .)))) %>%
       dplyr::group_by(id) %>%
       dplyr::filter(time == max(time)) %>%
-      dplyr::group_by(EndDay) %>%
-      dplyr::filter(time == max(time)) %>%
       dplyr::arrange(EndDay) %>%
       dplyr::ungroup() %>%
       dplyr::mutate(DayNumber = as.numeric(difftime(EndDay, min(EndDay, na.rm = T), units = "days")) + 1) %>%
