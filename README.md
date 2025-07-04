@@ -8,51 +8,51 @@ MW8process: Open-source R package to capture and process actigraphy data from Mo
 
 ## Installation
 
-You can install the development version of MW8process from [GitHub](https://github.com/) with:
+You can install the last version of MW8process from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("max-chauvineau/MW8process", build_vignettes = TRUE)
 ```
 
-## Chargement du package
+## Package Loading
 
 ``` r
 library(MW8process)
 ```
 
-## Fonctions du package
+## Package Functions
 
 ``` r
-# extract_all() -> extrait toutes les données et renvoie le résultat sous forme de liste
+# extract_all() -> extracts all data and returns the result (as a list)
 
-# extract_sleep_analysis() -> extrait les résultats de l'analyse du sommeil nuit par nuit
+# extract_sleep_analysis() -> extracts night-by-night sleep analysis results (data frame)
 
-# extract_motion() -> extrait les données de mouvement (count)
+# extract_motion() -> extracts epoch-by-epoch motion (count) data (data frame)
 
-# extract_npcra() -> extrait les résutats du npcra
+# extract_npcra() -> extracts NPCRA (non-parametric circadian rhythm analysis) results (data frame)
 
-# extract_nap() -> extrait les données de sieste
+# extract_nap() -> extracts nap data (data frame)
 
-# extract_light() -> extrait les données de luminosité
+# extract_light() -> extracts epoch-by-epoch light data (data frame)
 
-# extract_start_recording() -> extrait la date et l'heure de début de l'enregistrement
+# extract_start_recording() -> extracts the recording start date and time
 
-# extract_TZadj() -> extrait l'ajustement du fuseau horaire en heure(s) (à modifier dans MotionWare)
+# extract_TZadj() -> extracts time zone adjustment in hours (to be modified in MotionWare)
 
-# extract_userID() -> extrait l'id
+# extract_userID() -> extracts the user ID
 
-# extract_axial_mode() -> extrait le mode utilisé
+# extract_axial_mode() -> extracts the axial mode used
 
-# extract_device_SN() -> extrait le SN dfu MW8
+# extract_device_SN() -> extracts the MW8 device serial number (SN)
 
-# extract_device_version() -> extrait la version du MW8
+# extract_device_version() -> extracts the MW8 device version
 
-# extract_position() -> extrait la position définie
+# extract_position() -> extracts the recorded position setting
 
-# extract_sex() -> extrait le sexe
+# extract_sex() -> extracts sex information
 
-# extract_epoch() -> extrait l'epoch définie
+# extract_epoch() -> extracts the epoch setting
 
-# extract_frequency_light() -> extrait la fréquence de la luminosité
+# extract_frequency_light() -> extracts light measurement frequency
 ```
