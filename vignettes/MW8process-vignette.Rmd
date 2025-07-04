@@ -14,42 +14,46 @@ knitr::opts_chunk$set(
 )
 ```
 
-## Chargement du package
+## Package Loading
 
 ```{r setup}
 library(MW8process)
 ```
 
-## Fonctions du package
+## Package Functions
 
 ```{r functions}
-# extract_all() -> extrait toutes les données
+# extract_all() -> extracts all data and returns the result (as a list)
 
-# extract_sleep_analysis() -> extrait les résultats de l'analyse du sommeil nuit par nuit
+# extract_sleep_analysis() -> extracts night-by-night sleep analysis results (data frame)
 
-# extract_motion() -> extrait les données de mouvement (count)
+# extract_motion() -> extracts epoch-by-epoch motion (count) data (data frame)
 
-# extract_npcra() -> extrait les résutats du npcra
+# extract_npcra() -> extracts NPCRA (non-parametric circadian rhythm analysis) results (data frame)
 
-# extract_light() -> extrait les données de luminosité
+# extract_nap() -> extracts nap data (data frame)
 
-# extract_start_recording() -> extrait la date et l'heure de début de l'enregistrement
+# extract_light() -> extracts epoch-by-epoch light data (data frame)
 
-# extract_userID() -> extrait l'id
+# extract_start_recording() -> extracts the recording start date and time
 
-# extract_axial_mode() -> extrait le mode utilisé
+# extract_TZadj() -> extracts time zone adjustment in hours (to be modified in MotionWare)
 
-# extract_device_SN() -> extrait le SN dfu MW8
+# extract_userID() -> extracts the user ID
 
-# extract_device_version() -> extrait la version du MW8
+# extract_axial_mode() -> extracts the axial mode used
 
-# extract_position() -> extrait la position définie
+# extract_device_SN() -> extracts the MW8 device serial number (SN)
 
-# extract_sex() -> extrait le sexe
+# extract_device_version() -> extracts the MW8 device version
 
-# extract_epoch() -> extrait l'epoch définie
+# extract_position() -> extracts the recorded position setting
 
-# extract_frequency_light() -> extrait la fréquence de la luminosité
+# extract_sex() -> extracts sex information
+
+# extract_epoch() -> extracts the epoch setting
+
+# extract_frequency_light() -> extracts light measurement frequency
 ```
 
 
